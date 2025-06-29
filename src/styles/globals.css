@@ -38,6 +38,15 @@
   border: 3px solid #1f2937;
 }
 
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 html {
   scroll-behavior: smooth;
 }

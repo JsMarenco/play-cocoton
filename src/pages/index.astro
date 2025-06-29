@@ -1,5 +1,6 @@
 ---
 import BackgroundSlider from "../components/Common/BackgroundSlider";
+import TitleCommandForm from "../components/Common/TitleCommandForm";
 import Layout from "../layouts/Main.astro";
 
 const MODS_DOWNLOAD = import.meta.env.PUBLIC_MODS_DOWNLOAD;
@@ -13,9 +14,9 @@ const SERVER_IP = import.meta.env.PUBLIC_SERVER_IP;
 >
   <BackgroundSlider client:load />
 
-  <div class="fixed inset-0 z-0 flex items-center justify-center px-4">
+  <div class="z-0 flex min-h-screen items-center justify-center px-4">
     <div
-      class="w-full max-w-md space-y-6 rounded-xl border border-white/20 bg-white/10 p-8 text-center text-white shadow-2xl backdrop-blur-md"
+      class="my-11 w-full max-w-xl space-y-6 rounded-xl border border-white/20 bg-white/10 p-8 text-center text-white shadow-2xl backdrop-blur-md"
     >
       <h1 class="text-2xl font-bold tracking-wide text-white/90">
         Conéctate al servidor
@@ -35,6 +36,8 @@ const SERVER_IP = import.meta.env.PUBLIC_SERVER_IP;
       >
         🖌️ Descargar Mods
       </a>
+
+      <TitleCommandForm client:load />
     </div>
   </div>
 </Layout>
