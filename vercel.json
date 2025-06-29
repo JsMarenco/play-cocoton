@@ -1,0 +1,4 @@
+{
+  "buildCommand": "npm install --ignore-scripts --legacy-peer-deps && npm run build",
+  "outputDirectory": "dist"
+}
