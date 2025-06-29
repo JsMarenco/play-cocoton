@@ -32,7 +32,7 @@ const CommandFormBase = ({
 
       {children}
 
-      <code className="scrollbar block overflow-auto rounded-md border border-white/20 bg-black/40 px-4 py-2 text-left font-mono text-sm whitespace-nowrap text-amber-300 backdrop-blur-sm">
+      <code className="scrollbar block overflow-auto rounded-md border border-white/20 bg-black/40 px-4 pt-2 pb-0 text-left font-mono text-sm whitespace-nowrap text-amber-300 backdrop-blur-sm">
         {command}
       </code>
 
