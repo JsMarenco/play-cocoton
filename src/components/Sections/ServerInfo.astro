@@ -1,0 +1,43 @@
+---
+const MODS_DOWNLOAD = import.meta.env.PUBLIC_MODS_DOWNLOAD;
+const SERVER_IP = import.meta.env.PUBLIC_SERVER_IP;
+const MINECRAFT_VERSION = import.meta.env.PUBLIC_MINECRAFT_VERSION;
+const MOD_LOADER = import.meta.env.PUBLIC_MOD_LOADER;
+---
+
+<div
+  class="w-full max-w-xl space-y-6 rounded-xl border border-white/20 bg-white/10 p-8 text-center text-white shadow-2xl backdrop-blur-md"
+>
+  <h1 class="text-2xl font-bold tracking-wide text-white/90">
+    Conéctate al servidor
+  </h1>
+
+  <p
+    class="sm:text-md rounded-md border border-white/20 bg-black/40 px-4 py-2 font-mono backdrop-blur-sm md:text-lg"
+  >
+    IP: <span class="text-amber-400">{SERVER_IP}</span>
+  </p>
+
+  <div
+    class="flex flex-col items-center justify-between gap-2 text-sm text-white/80 sm:flex-row"
+  >
+    <p>
+      🎮 Versión: <span class="font-semibold text-white"
+        >{MINECRAFT_VERSION}</span
+      >
+    </p>
+
+    <p>
+      🔧 Mod Loader: <span class="font-semibold text-white">{MOD_LOADER}</span>
+    </p>
+  </div>
+
+  <a
+    class="inline-block w-full rounded-md bg-gradient-to-br from-green-700 via-lime-500 to-yellow-400 px-6 py-3 text-lg font-semibold text-white shadow-md transition duration-300 hover:from-green-800 hover:via-lime-600 hover:to-yellow-500 hover:shadow-xl"
+    href={MODS_DOWNLOAD}
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    🖌️ Descargar Mods
+  </a>
+</div>
