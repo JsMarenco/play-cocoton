@@ -1,8 +1,39 @@
 ---
-// Third-party dependencies
-
-// Current project dependencies
+import BackgroundSlider from "../components/Common/BackgroundSlider";
 import Layout from "../layouts/Main.astro";
+
+const MODS_DOWNLOAD = import.meta.env.PUBLIC_MODS_DOWNLOAD;
+const SERVER_IP = import.meta.env.PUBLIC_SERVER_IP;
 ---
 
-<Layout />
+<Layout
+  description="Vos no sabés quién soy, pero ya vas a ver en el servidor. Bajate los mods, meté la IP y listo. Aquí se viene a jugar, no a preguntar."
+  title="Jugar"
+>
+  <BackgroundSlider client:load />
+
+  <div class="fixed inset-0 z-0 flex items-center justify-center px-4">
+    <div
+      class="w-full max-w-md space-y-6 rounded-xl border border-white/20 bg-white/10 p-8 text-center text-white shadow-2xl backdrop-blur-md"
+    >
+      <h1 class="text-2xl font-bold tracking-wide text-white/90">
+        Conéctate al servidor
+      </h1>
+
+      <p
+        class="rounded-md border border-white/20 bg-black/40 px-4 py-2 font-mono text-lg backdrop-blur-sm"
+      >
+        IP: <span class="text-amber-400">{SERVER_IP}</span>
+      </p>
+
+      <a
+        class="inline-block w-full rounded-md bg-gradient-to-br from-green-700 via-lime-500 to-yellow-400 px-6 py-3 text-lg font-semibold text-white shadow-md transition duration-300 hover:from-green-800 hover:via-lime-600 hover:to-yellow-500 hover:shadow-xl"
+        href={MODS_DOWNLOAD}
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        🖌️ Descargar Mods
+      </a>
+    </div>
+  </div>
+</Layout>
