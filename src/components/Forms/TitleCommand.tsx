@@ -29,7 +29,11 @@ const TitleCommandForm = () => {
   })}`;
 
   return (
-    <CommandFormBase command={command} title="Comando de Título">
+    <CommandFormBase
+      command={command}
+      title="Comando de Título"
+      commandClassName="pb-0"
+    >
       <div className="mb-4">
         <label
           htmlFor="targetInput"

@@ -1,6 +1,7 @@
 // Third-party dependencies
 import { useState, type ReactNode } from "react";
 import { FaRegClipboard, FaCheck } from "react-icons/fa";
+import cn from "../../utils/cn";
 
 // Current project dependencies
 
@@ -8,10 +9,12 @@ const CommandFormBase = ({
   command,
   title,
   children,
+  commandClassName = "",
 }: {
   command: string;
   children: ReactNode;
   title: string;
+  commandClassName?: string;
 }) => {
   const [copied, setCopied] = useState(false);
 
@@ -32,7 +35,12 @@ const CommandFormBase = ({
 
       {children}
 
-      <code className="scrollbar block overflow-auto rounded-md border border-white/20 bg-black/40 px-4 pt-2 pb-1 text-left font-mono text-sm whitespace-nowrap text-amber-300 backdrop-blur-sm">
+      <code
+        className={cn(
+          "scrollbar block overflow-auto rounded-md border border-white/20 bg-black/40 px-4 pt-2 pb-1 text-left font-mono text-sm whitespace-nowrap text-amber-300 backdrop-blur-sm",
+          commandClassName,
+        )}
+      >
         {command}
       </code>
 
