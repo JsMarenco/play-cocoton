@@ -1,8 +1,12 @@
 ---
+import { FiPackage } from "react-icons/fi";
+import { FaGamepad, FaWrench } from "react-icons/fa";
+
 const MODS_DOWNLOAD = import.meta.env.PUBLIC_MODS_DOWNLOAD;
 const SERVER_IP = import.meta.env.PUBLIC_SERVER_IP;
 const MINECRAFT_VERSION = import.meta.env.PUBLIC_MINECRAFT_VERSION;
 const MOD_LOADER = import.meta.env.PUBLIC_MOD_LOADER;
+const MODS_COUNT = import.meta.env.PUBLIC_MODS_COUNT;
 ---
 
 <div
@@ -21,23 +25,25 @@ const MOD_LOADER = import.meta.env.PUBLIC_MOD_LOADER;
   <div
     class="flex flex-col items-center justify-between gap-2 text-sm text-white/80 sm:flex-row"
   >
-    <p>
-      🎮 Versión: <span class="font-semibold text-white"
-        >{MINECRAFT_VERSION}</span
-      >
+    <p class="flex items-center gap-2">
+      <FaGamepad className="text-white/80" />
+      Versión: <span class="font-semibold text-white">{MINECRAFT_VERSION}</span>
     </p>
 
-    <p>
-      🔧 Mod Loader: <span class="font-semibold text-white">{MOD_LOADER}</span>
+    <p class="flex items-center gap-2">
+      <FaWrench className="text-white/80" />
+      Mod Loader: <span class="font-semibold text-white">{MOD_LOADER}</span>
     </p>
   </div>
 
   <a
-    class="inline-block w-full rounded-md bg-gradient-to-br from-green-700 via-lime-500 to-yellow-400 px-6 py-3 text-lg font-semibold text-white shadow-md transition duration-300 hover:from-green-800 hover:via-lime-600 hover:to-yellow-500 hover:shadow-xl"
+    class="inline-flex w-full items-center justify-center gap-2 rounded-md bg-gradient-to-br from-green-700 via-lime-500 to-yellow-400 px-6 py-3 text-lg font-semibold text-white shadow-md transition duration-300 hover:from-green-800 hover:via-lime-600 hover:to-yellow-500 hover:shadow-xl"
     href={MODS_DOWNLOAD}
     rel="noopener noreferrer"
     target="_blank"
   >
-    🖌️ Descargar Mods
+    <FiPackage size={20} />
+    Descargar Mods
+    <span class="text-white/90">({MODS_COUNT})</span>
   </a>
 </div>

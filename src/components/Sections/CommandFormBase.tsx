@@ -1,5 +1,6 @@
 // Third-party dependencies
 import { useState, type ReactNode } from "react";
+import { FaRegClipboard, FaCheck } from "react-icons/fa";
 
 // Current project dependencies
 
@@ -37,9 +38,19 @@ const CommandFormBase = ({
 
       <button
         onClick={copyToClipboard}
-        className="w-full rounded-md bg-gradient-to-br from-green-700 via-lime-500 to-yellow-400 px-4 py-2 font-semibold text-white shadow-md transition duration-300 hover:from-green-800 hover:via-lime-600 hover:to-yellow-500"
+        className="flex w-full items-center justify-center gap-2 rounded-md bg-gradient-to-br from-green-700 via-lime-500 to-yellow-400 px-4 py-2 font-semibold text-white shadow-md transition duration-300 hover:from-green-800 hover:via-lime-600 hover:to-yellow-500"
       >
-        {copied ? "✅ Copiado" : "📋 Copiar comando"}
+        {copied ? (
+          <>
+            <FaCheck className="text-white" />
+            Copiado
+          </>
+        ) : (
+          <>
+            <FaRegClipboard className="text-white" />
+            Copiar comando
+          </>
+        )}
       </button>
     </div>
   );
