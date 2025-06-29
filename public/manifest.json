@@ -1,7 +1,7 @@
 {
-  "name": "",
-  "short_name": "",
-  "description": "",
+  "name": "Jugar | Cocotón",
+  "short_name": "JUgar",
+  "description": "Vos no sabés quién soy, pero ya vas a ver en el servidor. Bajate los mods, meté la IP y listo. Aquí se viene a jugar, no a preguntar.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#1a1a2e",
