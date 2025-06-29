@@ -1,0 +1,69 @@
+---
+interface Props {
+  url: string;
+  zoom?: number;
+  fov?: number;
+  width?: number;
+  height?: number;
+}
+
+const { url, zoom = 0.7, fov = 80, width = 200, height = 300 } = Astro.props;
+---
+
+<div class:list={`relative w-[${width}px] h-[${height}px]`}>
+  <astro-skin-renderer
+    data-fov={fov}
+    data-height={height}
+    data-url={url}
+    data-width={width}
+    data-zoom={zoom}></astro-skin-renderer>
+
+  <div
+    class="absolute top-0 left-0 h-full w-full"
+    style="background: transparent; touch-action: none;"
+  >
+  </div>
+</div>
+
+<script>
+  import { SkinViewer, IdleAnimation } from "skinview3d";
+
+  class SkinRenderer extends HTMLElement {
+    constructor() {
+      super();
+
+      const canvas = document.createElement("canvas");
+      const zoom = parseFloat(this.dataset.zoom || "0.7");
+      const fov = parseFloat(this.dataset.fov || "80");
+      const width = parseInt(this.dataset.width || "200");
+      const height = parseInt(this.dataset.height || "300");
+
+      canvas.width = width;
+      canvas.height = height;
+      canvas.style.display = "block";
+
+      this.appendChild(canvas);
+
+      const viewer = new SkinViewer({
+        width: width,
+        height: height,
+        canvas: canvas,
+      });
+
+      viewer.zoom = zoom;
+      viewer.fov = fov;
+      viewer.animation = new IdleAnimation();
+
+      viewer.camera.rotation.x = -0.1;
+      viewer.camera.rotation.y = 0.3;
+      viewer.camera.rotation.z = 0.05;
+      viewer.camera.position.set(15, 3, 25);
+
+      const skinUrl = this.dataset.url;
+
+      if (skinUrl) viewer.loadSkin(skinUrl);
+    }
+  }
+
+  customElements.define("astro-skin-renderer", SkinRenderer);
+</script>

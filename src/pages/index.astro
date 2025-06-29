@@ -6,6 +6,7 @@ import TimeCommandForm from "../components/Forms/TimeCommandForm";
 import ServerInfo from "../components/Sections/ServerInfo.astro";
 import Layout from "../layouts/Main.astro";
 import WeatherCommandForm from "../components/Forms/WeatherCommand";
+import SkinCard from "../components/Cards/SkinCard.astro";
 ---
 
 <Layout
@@ -16,9 +17,19 @@ import WeatherCommandForm from "../components/Forms/WeatherCommand";
   <BackgroundSlider client:load />
 
   <div
-    class="z-0 my-11 flex min-h-screen flex-col items-center justify-center gap-3 px-4"
+    class="z-0 flex min-h-screen flex-col items-center justify-center gap-3 px-4"
   >
-    <div class="flex min-h-screen w-full items-center justify-center">
+    <div class="flex min-h-screen w-full flex-col items-center justify-center">
+      <SkinCard url={"/assets/skins/churri.png"} />
+
+      <p class="max-w-md text-center text-lg text-gray-400">
+        Hola, soy <strong>Churri</strong>, la mera dueña del server. Te estoy
+        invitando con todo el flow... pero si no entrás, mando una patrulla que
+        te vigile hasta que entres, ¿oíste? No digas que no se te avisó. 😎🚨
+      </p>
+    </div>
+
+    <div class="flex min-h-screen w-full flex-col items-center justify-center">
       <ServerInfo />
     </div>
 
